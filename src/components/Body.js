@@ -10,7 +10,6 @@ import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 export const Body = ({spotify}) => {
   const [{discover_weekly},dispatch] = useStateValue();
 
-
   return (
     <div className='body'>
       <Header spotify={spotify}/>
@@ -29,7 +28,7 @@ export const Body = ({spotify}) => {
           <MoreHorizIcon />
         </div>
         {discover_weekly?.tracks.items.map(item=>(
-          <SongRow track={item.track} />
+          <SongRow spotify={spotify} track={item.track} />
         ))}
       </div>
     </div>
